@@ -1,1 +1,28 @@
-<p>product-add works!</p>
+<div class="container mx-auto">
+
+    <h1 class="h3 mt-5 ">Add New Product</h1>
+    {{productFormGroup.value | json}}
+    <form [formGroup]="productFormGroup" class="mt-5">
+        <div class="form-group mt-2">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group mt-2">
+            <label for="name">Price</label>
+            <input type="text" id="name" class="form-control" formControlName="price">
+        </div>
+        <div class="form-group mt-2">
+            <label for="Quantity">Quantity</label>
+            <input type="text" id="Quantity" class="form-control" formControlName="quantity">
+        </div>
+        <div class="form-group mt-2">
+            <label for="Selected">Selected</label>
+            <input type="checkbox" id="Selected" formControlName="selected" class="form-check">
+        </div>
+        <div class="form-group mt-2">
+            <label for="Available">Available</label>
+            <input type="checkbox" id="Available" formControlName="available" class="form-check">
+        </div>
+        <button type="submit" class="btn btn-success btn-sm form-control mt-3">Save</button>
+    </form>
+</div>
