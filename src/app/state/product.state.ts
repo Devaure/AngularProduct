@@ -12,7 +12,10 @@ export enum ProductActionTypes{
     NEW_PRODUCTS="[Product] New Product",
 }
 
-
+export interface ActionEvent {
+    type: ProductActionTypes,
+    payload?:any
+}
 export interface AppDataState<T>{
     dataState?: DataStateEnum,
     data?:T,

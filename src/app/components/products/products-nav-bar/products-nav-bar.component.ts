@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActionEvent, ProductActionTypes } from 'src/app/state/product.state';
 
 @Component({
   selector: 'app-products-nav-bar',
@@ -7,30 +8,31 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ProductsNavBarComponent implements OnInit {
 
-  @Output() productEventEmitter:EventEmitter<any> = new EventEmitter();
+  @Output() productEventEmitter:EventEmitter<ActionEvent> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onGetAllProducts(){
-    this.productEventEmitter.emit("ALL_PRODUCT");
+    this.productEventEmitter.emit({type:ProductActionTypes.GET_ALL_PRODUCTS});
   }
 
   onGetSelectedProducts(){
-    
+    this.productEventEmitter.emit({type:ProductActionTypes.GET_SELECTED_PRODUCTS});
   }
 
   onGetAvailableProducts(){
+    this.productEventEmitter.emit({type:ProductActionTypes.GET_AVAILABLE_PRODUCTS});
 
   }
 
   onNewProduct(){
-
+    this.productEventEmitter.emit({type:ProductActionTypes.NEW_PRODUCTS});
   }
 
-  onSearch(keyword:string){
-
+  onSearch(dataForm:string){
+    this.productEventEmitter.emit({type:ProductActionTypes.SEARCH_PRODUCTS, payload:dataForm});
   }
 
 }
