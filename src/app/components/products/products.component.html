@@ -12,6 +12,7 @@
         <li>
             <button (click)="onNewProduct()" class="btn btn-info btn-sm m-2">New Product</button>
         </li>
+        
     </ul>
     <ul class="navbar navbar-nav m-2">
         <li>
@@ -68,6 +69,13 @@
                         <div>
                             <button (click)="onDelete(p)" class="btn btn-danger btn-sm">
                                 <span class="fa fa-trash-o"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <button (click)="onEdit(p)" class="btn btn-danger btn-sm">
+                                <span class="fa fa-edit"></span>
                             </button>
                         </div>
                     </td>
