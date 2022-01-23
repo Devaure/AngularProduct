@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Computer",
       "price": 1990,
-      "quantity": 200,
+      "quantity": 210,
       "selected": false,
       "available": true
     },
