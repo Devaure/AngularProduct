@@ -20,7 +20,9 @@
                     <th>Selected</th>
                     <th>Available</th>
                 </tr>
-                <app-product-item [product]="p" (itemEventEmitter)="onActionEventItem($event)" *ngFor="let p of result.data" >
+                
+                <app-product-item [product]="p" (itemEventEmitter)="onActionEventItem($event)"
+                 *ngFor="let p of result.data" style="display: contents;">
 
                 </app-product-item>
                
