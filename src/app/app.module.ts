@@ -19,7 +19,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductsComponent,
     HomeComponent,
     ProductAddComponent,
-    ProductEditComponent
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
