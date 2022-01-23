@@ -31,5 +31,12 @@ export class ProductsListComponent implements OnInit {
     this.productsListEventEmitter.emit({type:ProductActionTypes.EDIT_PRODUCT,payload:p});
   }
 
+  /**
+   * I send all the events to parent product 
+   * @param $event 
+   */
+  onActionEventItem($event:ActionEvent){
+    this.productsListEventEmitter.emit($event);
+  }
 
 }
