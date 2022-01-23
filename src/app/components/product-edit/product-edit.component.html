@@ -32,17 +32,11 @@
         </div>
         <div class="form-group mt-2">
             <label for="Selected">Selected</label>
-            <input type="checkbox" id="Selected" formControlName="selected" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.selected.errors}">
-            <div *ngIf="submitted && productFormGroup.controls.selected.errors" class="invalid-feedback">
-                <div *ngIf="productFormGroup.controls.selected.hasError('required')">Selected is required</div>
-            </div>
+            <input type="checkbox" id="Selected" formControlName="selected" class="form-check">
         </div>
         <div class="form-group mt-2">
             <label for="Available">Available</label>
-            <input type="checkbox" id="Available" formControlName="available" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.available.errors}">
-            <div *ngIf="submitted && productFormGroup.controls.available.errors" class="invalid-feedback">
-                <div *ngIf="productFormGroup.controls.available.hasError('required')">Available is required</div>
-            </div>
+            <input type="checkbox" id="Available" formControlName="available" class="form-check">
         </div>
         <button type="submit" class="btn btn-success btn-sm form-control mt-3" (click)="onUpdateProduct()">Update</button>
     </form>

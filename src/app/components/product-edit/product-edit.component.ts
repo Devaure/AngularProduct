@@ -26,8 +26,8 @@ export class ProductEditComponent implements OnInit {
         name:[product.name, [Validators.required,Validators.maxLength(15)]],
         price:[product.price, [Validators.required,Validators.max(1000)]],
         quantity:[product.quantity, [Validators.required,Validators.max(10000)]],
-        selected:[product.selected, [Validators.requiredTrue]],
-        available:[product.available, [Validators.requiredTrue]],
+        selected:[product.selected],
+        available:[product.available],
       })
     })
   }
