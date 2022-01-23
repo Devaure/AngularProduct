@@ -87,6 +87,6 @@ export class ProductServiceService {
    * @returns 
    */
   UpdateProduct(product:Product):Observable<Product>{
-  return this.http.put<Product>(this.host+"/products/"+product.id,product);
+    return this.http.put<Product>(this.host+"/products/"+product.id,product);
   }
 }

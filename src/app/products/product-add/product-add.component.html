@@ -1,6 +1,6 @@
 <div class="container mx-auto" *ngIf="productFormGroup">
 
-    <h1 class="h3 mt-5 " >Add New Product</h1>
+    <h1 class="h3 mt-5 text-center" >Add New Product</h1>
 
     <form [formGroup]="productFormGroup" class="mt-5">
         <div class="form-group mt-2">
@@ -24,7 +24,7 @@
             <input type="number" id="Quantity" class="form-control" formControlName="quantity" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.quantity.errors}">
             <div *ngIf="submitted && productFormGroup.controls.quantity.errors" class="invalid-feedback">
                 <div *ngIf="productFormGroup.controls.quantity.errors.required">The price is required</div>
-                <div *ngIf="productFormGroup.controls.quantity.hasError('max')">Max quantity is 1000</div>
+                <div *ngIf="productFormGroup.controls.quantity.hasError('max')">Max quantity is 10 000</div>
             </div>
         </div>
         <div class="form-group mt-2">

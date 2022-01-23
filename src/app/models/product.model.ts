@@ -2,7 +2,7 @@ export interface Product {
     id:number,
     name:string,
     quantity:number,
-    prix:number,
+    price:number,
     selected:boolean,
     available:boolean
 }

@@ -1,8 +1,11 @@
 <div class="container mx-auto" *ngIf="productFormGroup">
 
-    <h1 class="h3 mt-5 " >Add New Product</h1>
+    <h1 class="h3 mt-5 text-center" >Update Product</h1>
 
     <form [formGroup]="productFormGroup" class="mt-5">
+        <div class="form-group mt-2">
+            <input type="hidden" id="name" class="form-control" formControlName="id">
+        </div>
         <div class="form-group mt-2">
             <label for="name">Name</label>
             <input type="text" id="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.name.errors}">
@@ -24,7 +27,7 @@
             <input type="number" id="Quantity" class="form-control" formControlName="quantity" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.quantity.errors}">
             <div *ngIf="submitted && productFormGroup.controls.quantity.errors" class="invalid-feedback">
                 <div *ngIf="productFormGroup.controls.quantity.errors.required">The price is required</div>
-                <div *ngIf="productFormGroup.controls.quantity.hasError('max')">Max quantity is 1000</div>
+                <div *ngIf="productFormGroup.controls.quantity.hasError('max')">Max quantity is 10 000</div>
             </div>
         </div>
         <div class="form-group mt-2">
@@ -41,7 +44,7 @@
                 <div *ngIf="productFormGroup.controls.available.hasError('required')">Available is required</div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success btn-sm form-control mt-3" (click)="onUpdateProduct()">Save</button>
+        <button type="submit" class="btn btn-success btn-sm form-control mt-3" (click)="onUpdateProduct()">Update</button>
     </form>
 </div>
 

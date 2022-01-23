@@ -17,7 +17,7 @@ export class ProductAddComponent implements OnInit {
     this.productFormGroup = this.formBuilder.group({
       name:["", [Validators.required,Validators.maxLength(15)]],
       price:[0, [Validators.required,Validators.max(1000)]],
-      quantity:[0, [Validators.required,Validators.max(100)]],
+      quantity:[0, [Validators.required,Validators.max(10000)]],
       selected:[true, [Validators.requiredTrue]],
       available:[true, [Validators.requiredTrue]],
     });
