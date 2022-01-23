@@ -1,28 +1,28 @@
-<div class="container mx-auto">
+<div class="container mx-auto" *ngIf="productFormGroup">
 
-    <h1 class="h3 mt-5 ">Add New Product</h1>
-    {{productFormGroup.value | json}}
+    <h1 class="h3 mt-5 " >Add New Product</h1>
+
     <form [formGroup]="productFormGroup" class="mt-5">
         <div class="form-group mt-2">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" formControlName="name">
+            <input type="text" id="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.name.errors}">
         </div>
         <div class="form-group mt-2">
             <label for="name">Price</label>
-            <input type="text" id="name" class="form-control" formControlName="price">
+            <input type="text" id="name" class="form-control" formControlName="price" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.price.errors}">
         </div>
         <div class="form-group mt-2">
             <label for="Quantity">Quantity</label>
-            <input type="text" id="Quantity" class="form-control" formControlName="quantity">
+            <input type="text" id="Quantity" class="form-control" formControlName="quantity" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.quantity.errors}">
         </div>
         <div class="form-group mt-2">
             <label for="Selected">Selected</label>
-            <input type="checkbox" id="Selected" formControlName="selected" class="form-check">
+            <input type="checkbox" id="Selected" formControlName="selected" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.selected.errors}">
         </div>
         <div class="form-group mt-2">
             <label for="Available">Available</label>
-            <input type="checkbox" id="Available" formControlName="available" class="form-check">
+            <input type="checkbox" id="Available" formControlName="available" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.available.errors}">
         </div>
-        <button type="submit" class="btn btn-success btn-sm form-control mt-3">Save</button>
+        <button type="submit" class="btn btn-success btn-sm form-control mt-3" (click)="onSaveProduct()">Save</button>
     </form>
 </div>
