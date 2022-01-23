@@ -6,22 +6,40 @@
         <div class="form-group mt-2">
             <label for="name">Name</label>
             <input type="text" id="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.name.errors}">
+            <div *ngIf="submitted && productFormGroup.controls.name.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls.name.errors.required">The name is required</div>
+                <div *ngIf="productFormGroup.controls.name.hasError('maxLength')">The name must be 15 characters</div>
+            </div>
         </div>
         <div class="form-group mt-2">
-            <label for="name">Price</label>
-            <input type="text" id="name" class="form-control" formControlName="price" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.price.errors}">
+            <label for="price">Price</label>
+            <input type="number" id="price" class="form-control" formControlName="price" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.price.errors}">
+            <div *ngIf="submitted && productFormGroup.controls.price.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls.price.errors.required">The price is required</div>
+                <div *ngIf="productFormGroup.controls.price.hasError('max')">The price is to expensive</div>
+            </div>
         </div>
         <div class="form-group mt-2">
             <label for="Quantity">Quantity</label>
-            <input type="text" id="Quantity" class="form-control" formControlName="quantity" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.quantity.errors}">
+            <input type="number" id="Quantity" class="form-control" formControlName="quantity" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.quantity.errors}">
+            <div *ngIf="submitted && productFormGroup.controls.quantity.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls.quantity.errors.required">The price is required</div>
+                <div *ngIf="productFormGroup.controls.quantity.hasError('max')">Max quantity is 1000</div>
+            </div>
         </div>
         <div class="form-group mt-2">
             <label for="Selected">Selected</label>
             <input type="checkbox" id="Selected" formControlName="selected" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.selected.errors}">
+            <div *ngIf="submitted && productFormGroup.controls.selected.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls.selected.hasError('required')">Selected is required</div>
+            </div>
         </div>
         <div class="form-group mt-2">
             <label for="Available">Available</label>
             <input type="checkbox" id="Available" formControlName="available" class="form-check" [ngClass]="{'is-invalid':submitted && productFormGroup.controls.available.errors}">
+            <div *ngIf="submitted && productFormGroup.controls.available.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls.available.hasError('required')">Available is required</div>
+            </div>
         </div>
         <button type="submit" class="btn btn-success btn-sm form-control mt-3" (click)="onSaveProduct()">Save</button>
     </form>

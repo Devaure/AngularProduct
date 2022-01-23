@@ -15,15 +15,17 @@ export class ProductAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.productFormGroup = this.formBuilder.group({
-      name:["", [Validators.required,Validators.maxLength(7)]],
+      name:["", [Validators.required,Validators.maxLength(15)]],
       price:[0, [Validators.required,Validators.max(1000)]],
       quantity:[0, [Validators.required,Validators.max(100)]],
-      selected:[true, [Validators.required]],
-      available:[true, [Validators.required]],
+      selected:[true, [Validators.requiredTrue]],
+      available:[true, [Validators.requiredTrue]],
     });
   }
 
   onSaveProduct(){
+    this.submitted =true;
+    if(this.productFormGroup?.invalid) return;
     this.productService.saveProduct(this.productFormGroup?.value).subscribe(data=>{
         alert("Success saving product");
     })
